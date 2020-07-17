@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- <script src="/js/main.js" defer></script> -->
+  <script>"use strict";</script>
+  <script src="/js/kanban.js" defer></script>
+
+  <title>Welcome</title>
+</head>
+
+<body>
+  <div class="container text-center">
+    <time id="time"></time>
+    <h1>
+      <span id="greeting">Good Afternoon</span>
+      <span id="name" contenteditable="true"></span>
+    </h1>
+    <h2>What is your main focus for today?</h2>
+    <h2 id="focus" contenteditable="true"></h2>
+  </div>
+
+
+  <div id="kanban" class="col pt-4">
+    <div class="row">
+      <div class="d-flex flex-row justify-content-center w-100">
+        <div class="col-4">
+          <h3 class="text-center">
+            <u>To-Do</u>
+            <span class="cursor" role="button" onclick="createTodo()">&plus;</span>
+          </h3>
+          <div id="todo-list" class="col h-100 list" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+
+            <div id="1573831250826" class="card p-2 m-1 dropzone" draggable="true" ondrop="moveDown(event, this.id)"
+              ondragstart="drag(event);" ondragenter="transparent(event);" ondragleave="opaque(event);"
+              ondblclick="editTodo(1573831250826);">
+              <div class="dropzone" style="opacity: 1; background: white none repeat scroll 0% 0%;"><span
+                  class="dropzone">nothing
+                  today</span><button class="badge badge-danger float-right dropzone"
+                  onclick="deleteTodo(1573831250826);">×</button></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-4">
+          <h3 class="text-center"><u>Doing</u></h3>
+          <div id="doing-list" class="col h-100 list" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="col-4">
+          <h3 class="text-center"><u>Done</u></h3>
+          <div id="done-list" class="col h-100 list" ondrop="drop(event, this)" ondragover="allowDrop(event)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/wallpaper.js"></script>
+</body>
+
+</html>
